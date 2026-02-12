@@ -8,7 +8,7 @@
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:linear-gradient(to bottom right,#ff9ecf,#ffcce6);
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
 overflow:hidden;
 }
 
@@ -129,22 +129,20 @@ to{text-shadow:0 0 25px yellow;}
 
 <body>
 
-<audio id="music" src="perfect.mp3"></audio>
+<audio id="music" src="perfect.mp3.mpeg"></audio>
 
 <!-- SLIDE 1 -->
 <div class="slide active" id="slide1">
 <h1>Our Beautiful Moments ❤️</h1>
 
 <div class="photos">
-<img src="photo1.jpg">
-<img src="photo2.jpg">
-<img src="photo3.jpg">
-<img src="photo4.jpg">
-<img src="photo5.jpg">
-<img src="photo6.jpg">
+<img src="photo1.jpg.jpeg">
+<img src="photo2.jpg.jpeg">
+<img src="photo3.jpg.jpeg">
+<img src="photo4.jpg.jpeg">
+<img src="photo5.jpg.jpeg">
+<img src="photo6.jpg.jpeg">
 </div>
-
-<button onclick="playMusic()">Play Song 🎵</button>
 
 <h2>Will You Stay With Me Forever? 💍</h2>
 <button onclick="showGifts()">Yes ❤️</button>
@@ -243,6 +241,9 @@ setTimeout(type,40);
 }
 
 </script>
-
+document.addEventListener("click", function() {
+    document.getElementById("music").play();
+}, { once: true });
+</script>
 </body>
 </html>
