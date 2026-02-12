@@ -2,95 +2,55 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
+<title>For Someone Special ❤️</title>
 
 <style>
-body{
+
+*{
 margin:0;
-overflow:hidden;
-font-family:Arial;
-background:black;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins', sans-serif;
 }
 
-.slider{
-display:flex;
-width:500%;
-height:100vh;
-transition:transform 0.8s ease-in-out;
+body{
+overflow:hidden;
 }
+
+/* SLIDES */
 
 .slide{
+position:absolute;
 width:100%;
 height:100vh;
-flex-shrink:0;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-position:relative;
-text-align:center;
+transition:0.6s;
+left:100%;
+}
+
+.slide.active{
+left:0;
 }
 
 /* INTRO */
+
 .intro{
 background:linear-gradient(135deg,#ff2e7a,#ff99cc);
 color:white;
-}
-
-.intro h1{
-font-size:28px;
-animation:fadeIn 2s ease;
-}
-
-button{
-padding:12px 25px;
-border:…
-[11:32 PM, 2/12/2026] Sathish😎😎😎: <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Love ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
-
-<style>
-body{
-margin:0;
-overflow:hidden;
-font-family:Arial;
-background:black;
-}
-
-.slider{
-display:flex;
-width:500%;
-height:100vh;
-transition:transform 0.8s ease-in-out;
-}
-
-.slide{
-width:100%;
-height:100vh;
-flex-shrink:0;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-position:relative;
 text-align:center;
+padding:20px;
 }
 
-/* INTRO */
-.intro{
-background:linear-gradient(135deg,#ff2e7a,#ff99cc);
-color:white;
-}
-
-.intro h1{
-font-size:28px;
-animation:fadeIn 2s ease;
+.intro img{
+width:120px;
+height:120px;
+border-radius:50%;
+margin:10px;
+object-fit:cover;
+border:4px solid white;
 }
 
 button{
@@ -100,30 +60,42 @@ border-radius:25px;
 margin:10px;
 font-size:16px;
 cursor:pointer;
+transition:0.3s;
 }
 
-.yes-btn{background:white;color:#ff2e7a;}
-.no-btn{background:#333;color:white;}
-
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+.yes-btn{
+background:white;
+color:#ff2e7a;
 }
 
-/* GIFTS */
+.no-btn{
+background:#333;
+color:white;
+}
+
+.yes-btn:hover{
+transform:scale(1.1);
+}
+
+.no-btn:hover{
+transform:scale(1.1);
+}
+
+/* GIFTS SLIDE */
+
 .gifts{
-background:linear-gradient(135deg,#ffb6d9,#ffcce6);
+background:linear-gradient(135deg,#ffb6c9,#ffcce6);
 }
 
 .gift-box{
 background:white;
-padding:20px 40px;
-border-radius:25px;
+padding:25px 40px;
+border-radius:20px;
 margin:15px;
-font-size:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
 cursor:pointer;
+font-size:18px;
 transition:0.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .gift-box:hover{
@@ -131,232 +103,184 @@ transform:scale(1.1);
 }
 
 /* GIFT 1 */
+
 .gift1{
-background:linear-gradient(135deg,#ff4e8b,#ff99cc);
+background:linear-gradient(135deg,#ff5e8a,#ff99cc);
 color:white;
+text-align:center;
+padding:20px;
 }
 
-.gift1 h2{
-font-family:'Pacifico',cursive;
-font-size:38px;
-}
-
-.rose-img{
-width:240px;
-animation:pop 1s ease;
-}
-
-@keyframes pop{
-from{transform:scale(0);}
-to{transform:scale(1);}
+.rose{
+font-size:80px;
+margin:20px;
 }
 
 .quote{
-position:absolute;
-background:white;
-color:#333;
-padding:10px;
-border-radius:20px;
-font-size:14px;
-width:140px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+margin:10px 0;
+font-size:18px;
 }
 
-.q1{top:20%;left:5%;}
-.q2{top:20%;right:5%;}
-.q3{bottom:25%;left:5%;}
-.q4{bottom:25%;right:5%;}
-
-/* Floating hearts */
 .heart{
 position:absolute;
 color:white;
-animation:float 4s linear infinite;
+font-size:20px;
+animation:float 5s linear infinite;
 }
 
 @keyframes float{
 0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-500px);opacity:0;}
-}
-
-/* Falling petals */
-.petal{
-position:absolute;
-font-size:18px;
-animation:fall 6s linear infinite;
-}
-
-@keyframes fall{
-0%{transform:translateY(-100px) rotate(0deg);}
-100%{transform:translateY(100vh) rotate(360deg);}
+100%{transform:translateY(-600px);opacity:0;}
 }
 
 /* GIFT 2 */
+
 .gift2{
-background:linear-gradient(135deg,#ffb6d9,#ffcce6);
+background:linear-gradient(135deg,#ffd6e8,#ffe6f2);
+padding:30px;
+text-align:center;
 }
 
-.gift2 h2{
-font-family:'Pacifico';
-color:#e6005c;
-font-size:36px;
-}
-
-.note{
-background:#fff8dc;
-padding:25px;
-width:300px;
-border-radius:10px;
-box-shadow:0 15px 30px rgba(0,0,0,0.3);
-font-family:'Indie Flower';
-font-size:18px;
-line-height:1.6;
-min-height:200px;
+.letter{
+background:white;
+padding:30px;
+border-radius:20px;
+max-width:400px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 /* GIFT 3 */
+
 .gift3{
-background:linear-gradient(135deg,#ff99cc,#ffe6f2);
-color:#e6005c;
+background:linear-gradient(135deg,#ff99cc,#ffccf2);
+color:white;
+text-align:center;
+padding:30px;
 }
 
-.timeline{
+.back-btn{
+margin-top:20px;
 background:white;
-padding:25px;
-border-radius:20px;
-width:320px;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-animation:glow 2s infinite alternate;
+color:#ff2e7a;
 }
 
-@keyframes glow{
-from{box-shadow:0 0 10px #ff2e7a;}
-to{box-shadow:0 0 30px #ff2e7a;}
-}
-
-/* Confetti */
-.confetti{
-position:absolute;
-width:8px;
-height:8px;
-background:white;
-animation:confettiFall 3s linear forwards;
-}
-
-@keyframes confettiFall{
-0%{transform:translateY(-100px);}
-100%{transform:translateY(100vh);}
-}
 </style>
 </head>
 
 <body>
 
-<audio autoplay loop>
-<source src="song.mp3" type="audio/mpeg">
+<!-- SLIDE 1 INTRO -->
+
+<div class="slide intro active" id="slide1">
+<h1>Will You Be Mine Forever? ❤️</h1>
+
+<img src="https://i.imgur.com/3ZQ3ZQp.jpg">
+<img src="https://i.imgur.com/3ZQ3ZQp.jpg">
+
+<audio controls autoplay loop>
+<source src="your-song-link.mp3" type="audio/mpeg">
 </audio>
 
-<div class="slider" id="slider">
-
-<!-- INTRO -->
-<div class="slide intro active">
-<h1>Will you be my Valentine? ❤️</h1>
-<button class="yes-btn" onclick="yesClicked()">YES</button>
-<button class="no-btn">NO</button>
+<div>
+<button class="yes-btn" onclick="showSlide(2)">Yes 💖</button>
+<button class="no-btn">No 😢</button>
+</div>
 </div>
 
-<!-- GIFTS -->
-<div class="slide gifts">
-<h2>Choose Your Gift 🎁</h2>
-<div class="gift-box" onclick="goToSlide(2)">Gift 1 🌹</div>
-<div class="gift-box" onclick="goToSlide(3)">Gift 2 💌</div>
-<div class="gift-box" onclick="goToSlide(4)">Gift 3 💖</div>
+<!-- SLIDE 2 GIFTS -->
+
+<div class="slide gifts" id="slide2">
+<h1>Choose Your Gift 🎁</h1>
+
+<div class="gift-box" onclick="showSlide(3)">Gift 1 🌹</div>
+<div class="gift-box" onclick="showSlide(4)">Gift 2 💌</div>
+<div class="gift-box" onclick="showSlide(5)">Gift 3 💍</div>
+
+<button class="back-btn" onclick="showSlide(1)">Back</button>
 </div>
 
-<!-- GIFT 1 -->
-<div class="slide gift1">
-<h2>Flowers For You 🌹</h2>
+<!-- SLIDE 3 GIFT 1 -->
 
-<div class="quote q1">I will always love you</div>
-<div class="quote q2">You are my forever</div>
-<div class="quote q3">Best part of my life</div>
-<div class="quote q4">I can’t imagine life without you</div>
+<div class="slide gift1" id="slide3">
+<div class="rose">🌹</div>
 
-<img src="cartoon-rose.png" class="rose-img">
+<div class="quote">You are the most beautiful part of my life ❤️</div>
+<div class="quote">With you, every moment feels magical ✨</div>
+<div class="quote">My heart chose you and it will always choose you 💕</div>
+<div class="quote">Forever isn’t enough with you 💖</div>
 
-<button onclick="goToSlide(1)">⬅ Back</button>
+<button class="back-btn" onclick="showSlide(2)">Back</button>
 </div>
 
-<!-- GIFT 2 -->
-<div class="slide gift2">
-<h2>Words From My Heart ❤️</h2>
-<div class="note" id="typeText"></div>
-<button onclick="goToSlide(1)">⬅ Back</button>
+<!-- SLIDE 4 GIFT 2 -->
+
+<div class="slide gift2" id="slide4">
+<div class="letter">
+<h2>My Love Letter 💌</h2>
+<p>
+From the moment you came into my life,
+everything became brighter.
+Your smile is my favorite sight,
+your voice is my favorite sound,
+and your heart is my favorite home.
+</p>
+<p>
+No matter where life takes us,
+I promise to hold your hand
+and walk beside you always.
+</p>
 </div>
 
-<!-- GIFT 3 -->
-<div class="slide gift3">
-<h2>Our Journey ✨</h2>
-<div class="timeline">
-<p>✨ The day we met</p>
-<p>✨ Our first call</p>
-<p>✨ Our first laugh</p>
-<p>✨ Forever to come...</p>
-</div>
-<button onclick="goToSlide(1)">⬅ Back</button>
+<button class="back-btn" onclick="showSlide(2)">Back</button>
 </div>
 
+<!-- SLIDE 5 GIFT 3 -->
+
+<div class="slide gift3" id="slide5">
+<h1>My Promise 💍</h1>
+
+<p>
+I promise to love you,
+respect you,
+support you,
+and stand beside you
+through every chapter of life.
+</p>
+
+<p>
+You are my today,
+my tomorrow,
+and my forever.
+</p>
+
+<button class="back-btn" onclick="showSlide(2)">Back</button>
 </div>
 
 <script>
-function goToSlide(n){
-document.getElementById("slider").style.transform="translateX(-"+n*100+"vw)";
-}
 
-function yesClicked(){
-goToSlide(1);
-for(let i=0;i<100;i++){
-let conf=document.createElement("div");
-conf.className="confetti";
-conf.style.left=Math.random()*100+"vw";
-conf.style.background="hsl("+Math.random()*360+",100%,50%)";
-document.body.appendChild(conf);
-setTimeout(()=>conf.remove(),3000);
-}
+function showSlide(number){
+document.querySelectorAll(".slide").forEach(slide=>{
+slide.classList.remove("active");
+});
+document.getElementById("slide"+number).classList.add("active");
 }
 
 /* Floating hearts */
+
 setInterval(()=>{
 let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
+heart.classList.add("heart");
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"%";
 heart.style.bottom="0";
 document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),4000);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
 },800);
 
-/* Falling petals */
-setInterval(()=>{
-let petal=document.createElement("div");
-petal.className="petal";
-petal.innerHTML="🌸";
-petal.style.left=Math.random()*100+"vw";
-document.body.appendChild(petal);
-setTimeout(()=>petal.remove(),6000);
-},1200);
-
-/* Typewriter */
-const text="To the love of my life,\nYou make my life so meaningful and I am so lucky to have you.\nI love you wholeheartedly and I can't wait to love you forever.\nYou are literally the most beautiful girl I know.\nAlways. Forever.\n— Sathish ❤️";
-let i=0;
-function typeWriter(){
-if(i<text.length){
-document.getElementById("typeText").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typeWriter,40);
-}
-}
-typeWriter();
 </script>
 
 </body>
