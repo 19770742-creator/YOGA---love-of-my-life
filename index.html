@@ -1,126 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Someone Special ❤️</title>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: 'Poppins', sans-serif;
-}
-
 body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(to bottom right,#ff9ecf,#ffcce6);
 overflow:hidden;
 }
-
-/* SLIDES */
 
 .slide{
 position:absolute;
 width:100%;
 height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-transition:0.6s;
+top:0;
 left:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+transition:1s;
+padding:20px;
+box-sizing:border-box;
 }
 
 .slide.active{
 left:0;
 }
 
-/* INTRO */
-
-.intro{
-background:linear-gradient(135deg,#ff2e7a,#ff99cc);
+h1,h2,p{
 color:white;
-text-align:center;
-padding:20px;
-}
-
-.intro img{
-width:120px;
-height:120px;
-border-radius:50%;
-margin:10px;
-object-fit:cover;
-border:4px solid white;
 }
 
 button{
 padding:12px 25px;
+margin:10px;
 border:none;
 border-radius:25px;
-margin:10px;
+background:white;
+color:#ff4da6;
 font-size:16px;
 cursor:pointer;
 transition:0.3s;
 }
 
-.yes-btn{
-background:white;
-color:#ff2e7a;
-}
-
-.no-btn{
-background:#333;
+button:hover{
+background:#ff4da6;
 color:white;
 }
 
-.yes-btn:hover{
-transform:scale(1.1);
+/* PHOTO STYLE */
+.photos img{
+width:180px;
+margin:10px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
 }
 
-.no-btn:hover{
-transform:scale(1.1);
-}
-
-/* GIFTS SLIDE */
-
+/* GIFT BUTTONS */
 .gifts{
-background:linear-gradient(135deg,#ffb6c9,#ffcce6);
+display:none;
+margin-top:20px;
 }
 
-.gift-box{
-background:white;
-padding:25px 40px;
-border-radius:20px;
-margin:15px;
-cursor:pointer;
-font-size:18px;
-transition:0.3s;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+/* ROSE BLOOM */
+.rose-img{
+width:350px;
+max-width:85%;
+margin:30px auto;
+display:block;
+animation:bloom 2s ease-out forwards, glow 2s ease-in-out infinite alternate 2s;
+transform:scale(0.3) rotate(-10deg);
+opacity:0;
 }
 
-.gift-box:hover{
-transform:scale(1.1);
+@keyframes bloom{
+0%{transform:scale(0.3) rotate(-10deg);opacity:0;}
+60%{transform:scale(1.1) rotate(3deg);opacity:1;}
+100%{transform:scale(1) rotate(0deg);opacity:1;}
 }
 
-/* GIFT 1 */
-
-.gift1{
-background:linear-gradient(135deg,#ff5e8a,#ff99cc);
-color:white;
-text-align:center;
-padding:20px;
+@keyframes glow{
+from{filter:drop-shadow(0 0 10px rgba(255,255,255,0.5));}
+to{filter:drop-shadow(0 0 30px rgba(255,255,255,0.9));}
 }
 
-.rose{
-font-size:80px;
-margin:20px;
-}
-
-.quote{
-margin:10px 0;
-font-size:18px;
-}
-
+/* FLOATING HEARTS */
 .heart{
 position:absolute;
 color:white;
@@ -133,35 +102,26 @@ animation:float 5s linear infinite;
 100%{transform:translateY(-600px);opacity:0;}
 }
 
-/* GIFT 2 */
-
-.gift2{
-background:linear-gradient(135deg,#ffd6e8,#ffe6f2);
-padding:30px;
-text-align:center;
-}
-
+/* LETTER TYPING */
 .letter{
-background:white;
-padding:30px;
-border-radius:20px;
-max-width:400px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-/* GIFT 3 */
-
-.gift3{
-background:linear-gradient(135deg,#ff99cc,#ffccf2);
+width:80%;
+max-width:600px;
 color:white;
-text-align:center;
-padding:30px;
+font-size:20px;
+white-space:pre-line;
+border-right:2px solid white;
+overflow:hidden;
 }
 
-.back-btn{
-margin-top:20px;
-background:white;
-color:#ff2e7a;
+/* FIREWORKS GLOW */
+.memory{
+font-size:22px;
+animation:glowText 2s infinite alternate;
+}
+
+@keyframes glowText{
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 25px yellow;}
 }
 
 </style>
@@ -169,117 +129,118 @@ color:#ff2e7a;
 
 <body>
 
-<!-- SLIDE 1 INTRO -->
+<audio id="music" src="perfect.mp3"></audio>
 
-<div class="slide intro active" id="slide1">
-<h1>Will You Be Mine Forever? ❤️</h1>
+<!-- SLIDE 1 -->
+<div class="slide active" id="slide1">
+<h1>Our Beautiful Moments ❤️</h1>
 
-<img src="https://i.imgur.com/3ZQ3ZQp.jpg">
-<img src="https://i.imgur.com/3ZQ3ZQp.jpg">
+<div class="photos">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+</div>
 
-<audio controls autoplay loop>
-<source src="your-song-link.mp3" type="audio/mpeg">
-</audio>
+<button onclick="playMusic()">Play Song 🎵</button>
 
-<div>
-<button class="yes-btn" onclick="showSlide(2)">Yes 💖</button>
-<button class="no-btn">No 😢</button>
+<h2>Will You Stay With Me Forever? 💍</h2>
+<button onclick="showGifts()">Yes ❤️</button>
+<button>No 😢</button>
+
+<div class="gifts" id="giftButtons">
+<button onclick="goToSlide('slide2')">Gift 1 🌹</button>
+<button onclick="goToSlide('slide3')">Gift 2 💌</button>
+<button onclick="goToSlide('slide4')">Gift 3 ✨</button>
 </div>
 </div>
 
-<!-- SLIDE 2 GIFTS -->
+<!-- SLIDE 2 - ROSE -->
+<div class="slide" id="slide2">
+<img src="rose.png" class="rose-img">
 
-<div class="slide gifts" id="slide2">
-<h1>Choose Your Gift 🎁</h1>
+<h2>You are the most beautiful part of my life ❤️</h2>
+<p>With you, every moment feels magical ✨</p>
+<p>My heart chose you and it will always choose you 💞</p>
+<p>Forever isn't enough with you 💖</p>
 
-<div class="gift-box" onclick="showSlide(3)">Gift 1 🌹</div>
-<div class="gift-box" onclick="showSlide(4)">Gift 2 💌</div>
-<div class="gift-box" onclick="showSlide(5)">Gift 3 💍</div>
-
-<button class="back-btn" onclick="showSlide(1)">Back</button>
+<button onclick="goToSlide('slide1')">Back</button>
 </div>
 
-<!-- SLIDE 3 GIFT 1 -->
-
-<div class="slide gift1" id="slide3">
-<div class="rose">🌹</div>
-
-<div class="quote">You are the most beautiful part of my life ❤️</div>
-<div class="quote">With you, every moment feels magical ✨</div>
-<div class="quote">My heart chose you and it will always choose you 💕</div>
-<div class="quote">Forever isn’t enough with you 💖</div>
-
-<button class="back-btn" onclick="showSlide(2)">Back</button>
-</div>
-
-<!-- SLIDE 4 GIFT 2 -->
-
-<div class="slide gift2" id="slide4">
-<div class="letter">
+<!-- SLIDE 3 - LETTER -->
+<div class="slide" id="slide3">
 <h2>My Love Letter 💌</h2>
-<p>
-From the moment you came into my life,
-everything became brighter.
-Your smile is my favorite sight,
-your voice is my favorite sound,
-and your heart is my favorite home.
-</p>
-<p>
-No matter where life takes us,
-I promise to hold your hand
-and walk beside you always.
-</p>
+<div class="letter" id="letterText"></div>
+<button onclick="goToSlide('slide1')">Back</button>
 </div>
 
-<button class="back-btn" onclick="showSlide(2)">Back</button>
-</div>
-
-<!-- SLIDE 5 GIFT 3 -->
-
-<div class="slide gift3" id="slide5">
-<h1>My Promise 💍</h1>
-
-<p>
-I promise to love you,
-respect you,
-support you,
-and stand beside you
-through every chapter of life.
-</p>
-
-<p>
-You are my today,
-my tomorrow,
-and my forever.
-</p>
-
-<button class="back-btn" onclick="showSlide(2)">Back</button>
+<!-- SLIDE 4 - MEMORY -->
+<div class="slide" id="slide4">
+<h2 class="memory">You are my today and all of my tomorrows ✨</h2>
+<p class="memory">Every memory with you is my favorite story ❤️</p>
+<button onclick="goToSlide('slide1')">Back</button>
 </div>
 
 <script>
 
-function showSlide(number){
+function goToSlide(id){
 document.querySelectorAll(".slide").forEach(slide=>{
 slide.classList.remove("active");
 });
-document.getElementById("slide"+number).classList.add("active");
+document.getElementById(id).classList.add("active");
+
+if(id === "slide2"){
+createHearts();
 }
 
-/* Floating hearts */
+if(id === "slide3"){
+startTyping();
+}
+}
 
-setInterval(()=>{
+function showGifts(){
+document.getElementById("giftButtons").style.display="block";
+}
+
+function playMusic(){
+document.getElementById("music").play();
+}
+
+/* HEARTS */
+function createHearts(){
+for(let i=0;i<20;i++){
 let heart=document.createElement("div");
-heart.classList.add("heart");
+heart.className="heart";
 heart.innerHTML="❤";
 heart.style.left=Math.random()*100+"%";
 heart.style.bottom="0";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
 document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+}
+}
 
-setTimeout(()=>{
-heart.remove();
-},5000);
+/* TYPING LETTER */
+let text="My love,\n\nFrom the moment you came into my life, everything changed beautifully.\nYou are my happiness, my peace, and my forever.\n\nI promise to love you more every single day.\n\nForever yours ❤️";
+let index=0;
 
-},800);
+function startTyping(){
+let letter=document.getElementById("letterText");
+letter.innerHTML="";
+index=0;
+type();
+}
+
+function type(){
+if(index<text.length){
+document.getElementById("letterText").innerHTML+=text.charAt(index);
+index++;
+setTimeout(type,40);
+}
+}
 
 </script>
 
