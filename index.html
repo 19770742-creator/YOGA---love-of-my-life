@@ -1,297 +1,362 @@
-<!DOCTYPE html>
+[11:21 PM, 2/12/2026] Sathish😎😎😎: <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Yoga ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
+
 <style>
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(to bottom, #ff4d6d, #c9184a);
-    color: white;
-    overflow-x: hidden;
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial;
+background:black;
 }
 
-h1 {
-    margin-top: 40px;
-    font-size: 38px;
-    animation: glow 2s infinite alternate;
+.slider{
+display:flex;
+width:500%;
+height:100vh;
+transition:transform 0.8s ease-in-out;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px white; }
-    to { text-shadow: 0 0 25px yellow; }
+.slide{
+width:100%;
+height:100vh;
+flex-shrink:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+text-align:center;
 }
 
-.gallery img {
-    width: 180px;
-    height: 240px;
-    object-fit: cover;
-    margin: 8px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px white;
+/* INTRO */
+.intro{
+background:linear-gradient(135deg,#ff2e7a,#ff99cc);
+color:white;
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px;
-    margin: 10px;
-    cursor: pointer;
+.intro h1{
+font-size:28px;
+animation:fadeIn 2s ease;
 }
 
-.yes {
-    background: white;
-    color: #c9184a;
+button{
+padding:12px 25px;
+border:…
+[11:32 PM, 2/12/2026] Sathish😎😎😎: <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial;
+background:black;
 }
 
-.no {
-    background: black;
-    color: white;
-    position: relative;
+.slider{
+display:flex;
+width:500%;
+height:100vh;
+transition:transform 0.8s ease-in-out;
 }
 
-.gift-box {
-    display: inline-block;
-    padding: 15px;
-    margin: 10px;
-    background: gold;
-    color: black;
-    border-radius: 15px;
-    cursor: pointer;
+.slide{
+width:100%;
+height:100vh;
+flex-shrink:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+text-align:center;
 }
 
-.animated-gift, .letter, .proposal-overlay {
-    display: none;
+/* INTRO */
+.intro{
+background:linear-gradient(135deg,#ff2e7a,#ff99cc);
+color:white;
 }
 
-/* Rose Gift */
-.real-rose {
-    width: 200px;
-    animation: rosePop 1.5s ease forwards;
+.intro h1{
+font-size:28px;
+animation:fadeIn 2s ease;
 }
 
-@keyframes rosePop {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+margin:10px;
+font-size:16px;
+cursor:pointer;
 }
 
-.love-quote {
-    font-size: 18px;
-    margin-top: 10px;
-    opacity: 0;
+.yes-btn{background:white;color:#ff2e7a;}
+.no-btn{background:#333;color:white;}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
 }
 
-.q1 { animation: fadeIn 2s forwards; animation-delay: 1s; }
-.q2 { animation: fadeIn 2s forwards; animation-delay: 3s; }
-.q3 { animation: fadeIn 2s forwards; animation-delay: 5s; }
-.q4 { animation: fadeIn 2s forwards; animation-delay: 7s; }
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* GIFTS */
+.gifts{
+background:linear-gradient(135deg,#ffb6d9,#ffcce6);
 }
 
-/* Letter */
-.letter {
-    margin: 30px auto;
-    width: 80%;
-    max-width: 500px;
-    background: #fff0f3;
-    color: #c9184a;
-    padding: 20px;
-    border-radius: 15px;
-    font-size: 16px;
-    text-align: left;
-    box-shadow: 0 0 20px white;
+.gift-box{
+background:white;
+padding:20px 40px;
+border-radius:25px;
+margin:15px;
+font-size:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+cursor:pointer;
+transition:0.3s;
 }
 
-/* Proposal */
-.proposal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 999;
+.gift-box:hover{
+transform:scale(1.1);
 }
 
-.proposal-box {
-    background: #ff4d6d;
-    padding: 40px;
-    border-radius: 20px;
-    animation: zoomIn 1s ease forwards;
+/* GIFT 1 */
+.gift1{
+background:linear-gradient(135deg,#ff4e8b,#ff99cc);
+color:white;
 }
 
-@keyframes zoomIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
+.gift1 h2{
+font-family:'Pacifico',cursive;
+font-size:38px;
 }
 
-/* Fireworks */
-.firework {
-    position: fixed;
-    width: 5px;
-    height: 5px;
-    background: yellow;
-    border-radius: 50%;
-    animation: explode 1s ease-out;
+.rose-img{
+width:240px;
+animation:pop 1s ease;
 }
 
-@keyframes explode {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(15); opacity: 0; }
+@keyframes pop{
+from{transform:scale(0);}
+to{transform:scale(1);}
 }
 
-/* Hearts */
-.heart {
-    position: fixed;
-    font-size: 20px;
-    animation: floatUp 4s linear;
-    color: pink;
+.quote{
+position:absolute;
+background:white;
+color:#333;
+padding:10px;
+border-radius:20px;
+font-size:14px;
+width:140px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-@keyframes floatUp {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-600px); opacity: 0; }
+.q1{top:20%;left:5%;}
+.q2{top:20%;right:5%;}
+.q3{bottom:25%;left:5%;}
+.q4{bottom:25%;right:5%;}
+
+/* Floating hearts */
+.heart{
+position:absolute;
+color:white;
+animation:float 4s linear infinite;
 }
 
+@keyframes float{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-500px);opacity:0;}
+}
+
+/* Falling petals */
+.petal{
+position:absolute;
+font-size:18px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px) rotate(0deg);}
+100%{transform:translateY(100vh) rotate(360deg);}
+}
+
+/* GIFT 2 */
+.gift2{
+background:linear-gradient(135deg,#ffb6d9,#ffcce6);
+}
+
+.gift2 h2{
+font-family:'Pacifico';
+color:#e6005c;
+font-size:36px;
+}
+
+.note{
+background:#fff8dc;
+padding:25px;
+width:300px;
+border-radius:10px;
+box-shadow:0 15px 30px rgba(0,0,0,0.3);
+font-family:'Indie Flower';
+font-size:18px;
+line-height:1.6;
+min-height:200px;
+}
+
+/* GIFT 3 */
+.gift3{
+background:linear-gradient(135deg,#ff99cc,#ffe6f2);
+color:#e6005c;
+}
+
+.timeline{
+background:white;
+padding:25px;
+border-radius:20px;
+width:320px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 10px #ff2e7a;}
+to{box-shadow:0 0 30px #ff2e7a;}
+}
+
+/* Confetti */
+.confetti{
+position:absolute;
+width:8px;
+height:8px;
+background:white;
+animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+0%{transform:translateY(-100px);}
+100%{transform:translateY(100vh);}
+}
 </style>
 </head>
 
 <body>
 
-<h1>Yoga ❤️ Will You Be My Valentine?</h1>
+<audio autoplay loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
 
-<div class="gallery">
-<img src="photo1.jpg.jpeg">
-<img src="photo2.jpg.jpeg">
-<img src="photo3.jpg.jpeg">
-<img src="photo4.jpg.jpeg">
-<img src="photo5.jpg.jpeg">
-<img src="photo6.jpg.jpeg">
+<div class="slider" id="slider">
+
+<!-- INTRO -->
+<div class="slide intro">
+<h1>Will you be my Valentine? ❤️</h1>
+<button class="yes-btn" onclick="yesClicked()">YES</button>
+<button class="no-btn">NO</button>
 </div>
 
-<button class="yes" onclick="sayYes()">YES ❤️</button>
-<button class="no" onmouseover="moveNo(this)">NO 😜</button>
-
-<h2>Open Your Gifts 🎁</h2>
-
-<div class="gift-box" onclick="openRose()">🌹 Gift 1</div>
-<div class="gift-box" onclick="openLetter()">💌 Gift 2</div>
-<div class="gift-box" onclick="openProposal()">💍 Gift 3</div>
-
-<div id="roseGift" class="animated-gift">
-<img src="rose.png" class="rose-img">
-<div class="love-quote q1">You are the reason my heart smiles ❤️</div>
-<div class="love-quote q2">Every moment with you feels magical ✨</div>
-<div class="love-quote q3">I found my forever in you 💞</div>
-<div class="love-quote q4">You are my today and all my tomorrows 🌹</div>
+<!-- GIFTS -->
+<div class="slide gifts">
+<h2>Choose Your Gift 🎁</h2>
+<div class="gift-box" onclick="goToSlide(2)">Gift 1 🌹</div>
+<div class="gift-box" onclick="goToSlide(3)">Gift 2 💌</div>
+<div class="gift-box" onclick="goToSlide(4)">Gift 3 💖</div>
 </div>
 
-<div id="loveLetter" class="letter">
-<p id="typedText"></p>
+<!-- GIFT 1 -->
+<div class="slide gift1">
+<h2>Flowers For You 🌹</h2>
+
+<div class="quote q1">I will always love you</div>
+<div class="quote q2">You are my forever</div>
+<div class="quote q3">Best part of my life</div>
+<div class="quote q4">I can’t imagine life without you</div>
+
+<img src="cartoon-rose.png" class="rose-img">
+
+<button onclick="goToSlide(1)">⬅ Back</button>
 </div>
 
-<div id="proposalOverlay" class="proposal-overlay">
-<div class="proposal-box">
-<h2>Will You Be Mine Forever? 💖</h2>
-<button onclick="finalYes()">YES ❤️</button>
-</div>
+<!-- GIFT 2 -->
+<div class="slide gift2">
+<h2>Words From My Heart ❤️</h2>
+<div class="note" id="typeText"></div>
+<button onclick="goToSlide(1)">⬅ Back</button>
 </div>
 
-<audio id="music" src="perfect.mp3.mpeg"></audio>
+<!-- GIFT 3 -->
+<div class="slide gift3">
+<h2>Our Journey ✨</h2>
+<div class="timeline">
+<p>✨ The day we met</p>
+<p>✨ Our first call</p>
+<p>✨ Our first laugh</p>
+<p>✨ Forever to come...</p>
+</div>
+<button onclick="goToSlide(1)">⬅ Back</button>
+</div>
+
+</div>
 
 <script>
-
-function sayYes() {
-createFireworks();
-document.getElementById("music").play();
+function goToSlide(n){
+document.getElementById("slider").style.transform="translateX(-"+n*100+"vw)";
 }
 
-function moveNo(btn) {
-btn.style.position = "absolute";
-btn.style.left = Math.random() * window.innerWidth + "px";
-btn.style.top = Math.random() * window.innerHeight + "px";
-}
-
-function openRose() {
-document.getElementById("roseGift").style.display = "block";
-createHearts();
-}
-
-function openLetter() {
-document.getElementById("loveLetter").style.display = "block";
-typeLetter();
-}
-
-const letterText = `My Dearest Yoga ❤️
-
-From the moment you walked into my life, everything changed.
-You didn’t just become someone special —
-you became my happiness, my peace, my favorite thought.
-
-Every smile of yours makes my world brighter.
-Every conversation with you feels like home.
-
-I promise to value you, respect you,
-and stand beside you through everything.
-
-Forever yours,
-Sathish ❤️`;
-
-let index = 0;
-
-function typeLetter() {
-if (index < letterText.length) {
-document.getElementById("typedText").innerHTML += letterText.charAt(index);
-index++;
-setTimeout(typeLetter, 35);
+function yesClicked(){
+goToSlide(1);
+for(let i=0;i<100;i++){
+let conf=document.createElement("div");
+conf.className="confetti";
+conf.style.left=Math.random()*100+"vw";
+conf.style.background="hsl("+Math.random()*360+",100%,50%)";
+document.body.appendChild(conf);
+setTimeout(()=>conf.remove(),3000);
 }
 }
 
-function openProposal() {
-document.getElementById("proposalOverlay").style.display = "flex";
-createHearts();
-}
-
-function finalYes() {
-document.getElementById("proposalOverlay").innerHTML =
-"<h1 style='color:white;'>She Said YESSSS ❤️💍</h1>";
-createFireworks();
-document.getElementById("music").play();
-}
-
-function createFireworks() {
-for (let i = 0; i < 25; i++) {
-let firework = document.createElement("div");
-firework.className = "firework";
-firework.style.left = Math.random() * window.innerWidth + "px";
-firework.style.top = Math.random() * window.innerHeight + "px";
-document.body.appendChild(firework);
-setTimeout(() => firework.remove(), 1000);
-}
-}
-
-function createHearts() {
-for (let i = 0; i < 20; i++) {
-let heart = document.createElement("div");
-heart.className = "heart";
-heart.innerHTML = "💖";
-heart.style.left = Math.random() * window.innerWidth + "px";
-heart.style.bottom = "0px";
+/* Floating hearts */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.bottom="0";
 document.body.appendChild(heart);
-setTimeout(() => heart.remove(), 4000);
-}
-}
+setTimeout(()=>heart.remove(),4000);
+},800);
 
+/* Falling petals */
+setInterval(()=>{
+let petal=document.createElement("div");
+petal.className="petal";
+petal.innerHTML="🌸";
+petal.style.left=Math.random()*100+"vw";
+document.body.appendChild(petal);
+setTimeout(()=>petal.remove(),6000);
+},1200);
+
+/* Typewriter */
+const text="To the love of my life,\nYou make my life so meaningful and I am so lucky to have you.\nI love you wholeheartedly and I can't wait to love you forever.\nYou are literally the most beautiful girl I know.\nAlways. Forever.\n— Sathish ❤️";
+let i=0;
+function typeWriter(){
+if(i<text.length){
+document.getElementById("typeText").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+}
+typeWriter();
 </script>
 
 </body>
