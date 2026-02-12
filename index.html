@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My Love ❤️</title>
 
 <style>
@@ -16,57 +16,74 @@ html, body{
     background:linear-gradient(135deg,#ff758c,#ff7eb3);
 }
 
-/* Slide container */
+/* Slide System */
 .slide{
     position:fixed;
     top:0;
     left:100%;
     width:100%;
     height:100%;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-    padding:25px;
+    padding:20px;
     box-sizing:border-box;
-
-    transition:left 0.8s ease-in-out;
+    transition:left 0.6s ease;
 }
 
 .slide.active{
     left:0;
 }
 
-h1{
-    font-size:30px;
+h1,h2,p{
     color:white;
-    margin-bottom:10px;
-}
-
-h2{
-    font-size:24px;
-    color:white;
-}
-
-p{
-    font-size:18px;
-    color:white;
-    max-width:420px;
 }
 
 button{
-    margin-top:25px;
-    padding:12px 28px;
+    margin:10px;
+    padding:12px 25px;
     border:none;
-    border-radius:30px;
+    border-radius:25px;
     background:white;
     color:#ff4e7a;
     font-weight:bold;
     font-size:16px;
     cursor:pointer;
+}
+
+/* Photo grid */
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.photo-grid img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* Rose */
+.rose{
+    width:180px;
+    animation:bloom 2s ease forwards;
+}
+
+@keyframes bloom{
+    from{transform:scale(0);}
+    to{transform:scale(1);}
+}
+
+/* Typewriter */
+.typewriter{
+    max-width:350px;
+    font-size:18px;
+    border-right:2px solid white;
+    white-space:pre-wrap;
+    overflow:hidden;
 }
 </style>
 </head>
@@ -75,40 +92,100 @@ button{
 
 <!-- Slide 1 -->
 <div class="slide active" id="slide1">
-    <h1>Hi My Love ❤️</h1>
-    <p>I made something special just for you.</p>
-    <button onclick="showSlide('slide2')">Next ➡</button>
+    <h1>My Beautiful Love ❤️</h1>
+
+    <div class="photo-grid">
+        <img src="photo1.jpg.jpeg">
+        <img src="photo2.jpg.jpeg">
+        <img src="photo3.jpg.jpeg">
+        <img src="photo4.jpg.jpeg">
+        <img src="photo5.jpg.jpeg">
+        <img src="photo6.jpg.jpeg">
+    </div>
+
+    <p>Do you want to open your gifts? 🎁</p>
+    <button onclick="showSlide('slide2')">Yes 💖</button>
+    <button>No 😜</button>
 </div>
 
 <!-- Slide 2 -->
 <div class="slide" id="slide2">
-    <h2>You Are My Happiness 🌸</h2>
-    <p>Every moment with you feels magical and beautiful.</p>
-    <button onclick="showSlide('slide3')">Next ➡</button>
+    <h2>Choose Your Gift 🎁</h2>
+    <button onclick="showSlide('slide3')">Gift 1 🌹</button>
+    <button onclick="showSlide('slide4'); startTyping()">Gift 2 💌</button>
+    <button onclick="showSlide('slide5')">Gift 3 ✨</button>
 </div>
 
 <!-- Slide 3 -->
 <div class="slide" id="slide3">
-    <h2>I Love You Forever 💕</h2>
-    <p>You mean everything to me.</p>
+    <img src="rose.png" class="rose">
+    <p>🌸 You are my sunshine</p>
+    <p>🌸 My heart beats for you</p>
+    <p>🌸 Forever is not enough with you</p>
+    <p>🌸 You are my everything</p>
+    <button onclick="showSlide('slide2')">⬅ Back</button>
 </div>
 
-<!-- Background Music -->
+<!-- Slide 4 -->
+<div class="slide" id="slide4">
+    <div class="typewriter" id="letter"></div>
+    <button onclick="showSlide('slide2')">⬅ Back</button>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide" id="slide5">
+    <h2>My Promise 💍</h2>
+    <p>I promise to stand by you,  
+    support you,  
+    love you endlessly,  
+    and choose you every single day.</p>
+    <p>Our story is just beginning ❤️</p>
+</div>
+
+<!-- Music -->
 <audio id="music" src="perfect.mp3.mpeg" preload="auto"></audio>
 
 <script>
 function showSlide(id){
-    document.querySelectorAll(".slide").forEach(slide=>{
-        slide.classList.remove("active");
+    document.querySelectorAll(".slide").forEach(s=>{
+        s.classList.remove("active");
     });
     document.getElementById(id).classList.add("active");
 }
 
-/* Play music on first tap (mobile safe) */
+/* Music on first tap */
 document.addEventListener("click", function(){
-    const music = document.getElementById("music");
-    music.play().catch(()=>{});
+    document.getElementById("music").play().catch(()=>{});
 }, { once:true });
+
+/* Typewriter Effect */
+const message = `My Love,
+
+From the moment you entered my life,
+everything became brighter.
+
+You are my peace,
+my happiness,
+and my forever.
+
+Always yours ❤️`;
+
+let index = 0;
+
+function startTyping(){
+    const letter = document.getElementById("letter");
+    letter.innerHTML = "";
+    index = 0;
+    type();
+}
+
+function type(){
+    if(index < message.length){
+        document.getElementById("letter").innerHTML += message.charAt(index);
+        index++;
+        setTimeout(type, 40);
+    }
+}
 </script>
 
 </body>
