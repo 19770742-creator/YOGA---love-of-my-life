@@ -289,12 +289,22 @@ Forever yours ❤️</p>
 
 <script>
 
+// ---------- START LOVE ----------
+function startLove() {
+    document.getElementById("music").play();
+    showSlide("slide2");
+}
+
 // ---------- SLIDE SWITCHING ----------
 function showSlide(id) {
     document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
     document.getElementById(id).classList.add("active");
-}
 
+    if (id === "slide6") {
+        slideIndex = 1;
+        showSlides(slideIndex);
+    }
+}
 
 // ---------- CELEBRATION EFFECT ----------
 function celebrate() {
@@ -312,8 +322,7 @@ function celebrate() {
     }
 }
 
-
-// ---------- SLIDESHOW (SLIDE 6) ----------
+// ---------- SLIDESHOW ----------
 let slideIndex = 1;
 
 function plusSlides(n) {
@@ -335,8 +344,6 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
 }
 
-
-// Automatically show first slideshow image when page loads
 document.addEventListener("DOMContentLoaded", function() {
     showSlides(slideIndex);
 });
@@ -344,5 +351,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
