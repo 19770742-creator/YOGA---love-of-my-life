@@ -154,6 +154,27 @@ to{opacity:1;}
 @keyframes fall{
 to{transform:translateY(100vh);}
 }
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+
+/* ---------- SLIDE 6 SLIDESHOW ---------- */
+
+.mySlides {
+  display: none;
+}
+
+.slideshow-container {
+  max-width: 350px;
+  margin: auto;
+  text-align: center;
+}
+
+.slideshow-container img {
+  width: 100%;
+  border-radius: 20px;
+}
+
 </style>
 </head>
 
@@ -222,54 +243,39 @@ Forever yours ❤️</p>
 <!-- SLIDE 6 -->
 <div class="slide" id="slide6">
 
-<h2 style="margin-bottom:30px;">Our Beautiful Timeline 💖</h2>
+<h2 style="margin-bottom:20px;">Our Beautiful Memories 💖</h2>
 
-<div style="max-width:800px; margin:auto;">
+<div class="slideshow-container">
 
-    <!-- Timeline Item 1 -->
-    <div style="margin-bottom:40px;">
-        <img src="timeline1.jpg.jpeg" 
-             style="width:100%; max-width:350px; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.6);">
-        <h3>🌸 The Day you entered my house</h3>
-        <p>The moment my world changed forever.  
-        I didn’t know that day would become the most important chapter of my life.</p>
+    <div class="mySlides fade">
+        <img src="timeline1.jpg.jpeg" style="width:100%; border-radius:20px;">
+        <p>🌸 The Day We Met</p>
     </div>
 
-    <!-- Timeline Item 2 -->
-    <div style="margin-bottom:40px;">
-        <img src="timeline2.jpg.jpeg" 
-             style="width:100%; max-width:350px; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.6);">
-        <h3>💬 Our First Long Outing</h3>
-        <p>Hours felt like minutes talking to you.  
-        That’s when I knew something special had begun.</p>
+    <div class="mySlides fade">
+        <img src="timeline2.jpg.jpeg" style="width:100%; border-radius:20px;">
+        <p>💬 Our First Long Outing</p>
     </div>
 
-    <!-- Timeline Item 3 -->
-    <div style="margin-bottom:40px;">
-        <img src="timeline3.jpg.jpeg" 
-             style="width:100%; max-width:350px; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.6);">
-        <h3>🌹 Our Special Memory</h3>
-        <p>A day I will cherish forever.  
-        Every smile, every laugh — unforgettable.</p>
+    <div class="mySlides fade">
+        <img src="timeline3.jpg.jpeg" style="width:100%; border-radius:20px;">
+        <p>🌹 Our Special Memory</p>
     </div>
 
-    <!-- Timeline Item 4 -->
-    <div style="margin-bottom:40px;">
-        <img src="timeline4.jpg.jpeg" 
-             style="width:100%; max-width:350px; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.6);">
-        <h3>💍 The Promise</h3>
-        <p>Choosing you. Always.  
-        In every lifetime, in every universe.</p>
+    <div class="mySlides fade">
+        <img src="timeline4.jpg.jpeg" style="width:100%; border-radius:20px;">
+        <p>💍 The Promise</p>
     </div>
 
-    <!-- Timeline Item 5 -->
-    <div style="margin-bottom:40px;">
-        <img src="timeline5.jpg.jpeg" 
-             style="width:100%; max-width:350px; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.6);">
-        <h3>✨ Our Forever</h3>
-        <p>This is just the beginning of our beautiful story.  
-        The best chapters are yet to come.</p>
+    <div class="mySlides fade">
+        <img src="timeline5.jpg.jpeg" style="width:100%; border-radius:20px;">
+        <p>✨ Our Forever</p>
     </div>
+
+    <br>
+
+    <button onclick="plusSlides(-1)">⬅ Prev</button>
+    <button onclick="plusSlides(1)">Next ➡</button>
 
 </div>
 
@@ -282,78 +288,61 @@ Forever yours ❤️</p>
 <audio id="music" src="perfect.mp3.mpeg"></audio>
 
 <script>
-function showSlide(id){
-document.querySelectorAll(".slide").forEach(s=>s.classList.remove("active"));
-document.getElementById(id).classList.add("active");
+
+// ---------- SLIDE SWITCHING ----------
+function showSlide(id) {
+    document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
 }
 
-/* YES */
-function startLove(){
-document.getElementById("music").play().catch(()=>{});
-showSlide('slide2');
-startHearts();
+
+// ---------- CELEBRATION EFFECT ----------
+function celebrate() {
+    for (let i = 0; i < 80; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "💖";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        heart.style.fontSize = "20px";
+        heart.style.animation = "floatUp 3s linear forwards";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 3000);
+    }
 }
 
-/* HEARTS */
-function startHearts(){
-setInterval(()=>{
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤️";
-heart.style.left=Math.random()*100+"vw";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
-},700);
+
+// ---------- SLIDESHOW (SLIDE 6) ----------
+let slideIndex = 1;
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
 }
 
-/* NO SHRINK */
-let size=1;
-document.getElementById("noBtn").addEventListener("click",()=>{
-size-=0.2;
-if(size<=0){
-document.getElementById("noBtn").style.display="none";
-}else{
-document.getElementById("noBtn").style.transform="scale("+size+")";
+function showSlides(n) {
+    let slides = document.getElementsByClassName("mySlides");
+
+    if (slides.length === 0) return;
+
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
 }
+
+
+// Automatically show first slideshow image when page loads
+document.addEventListener("DOMContentLoaded", function() {
+    showSlides(slideIndex);
 });
 
-/* ENVELOPE */
-function openEnvelope(){
-showSlide('slide4');
-}
-function revealLetter(){
-document.getElementById("letterText").style.display="block";
-}
-
-/* CELEBRATION */
-function celebrate(){
-let slide5=document.getElementById("slide5");
-
-/* particles */
-for(let i=0;i<60;i++){
-let p=document.createElement("div");
-p.className="particle";
-p.style.left=Math.random()*100+"vw";
-p.style.top=Math.random()*100+"vh";
-slide5.appendChild(p);
-}
-
-/* confetti */
-for(let i=0;i<100;i++){
-let c=document.createElement("div");
-c.style.position="fixed";
-c.style.width="6px";
-c.style.height="6px";
-c.style.background="hsl("+Math.random()*360+"deg,100%,50%)";
-c.style.left=Math.random()*100+"vw";
-c.style.top="0px";
-c.style.animation="fall 3s linear forwards";
-document.body.appendChild(c);
-setTimeout(()=>c.remove(),3000);
-}
-}
 </script>
-
 </body>
 </html>
+
 
