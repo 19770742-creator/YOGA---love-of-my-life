@@ -36,6 +36,27 @@
     margin-top: 10px;
 }
 
+/* Proposal Slide */
+#slide7 {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    text-align: center;
+    padding: 40px;
+}
+
+.proposal-box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.proposal-box h1 {
+    color: #ff4d88;
+}
+
+.proposal-box button {
+    margin: 10px;
+}
 html,body{
 margin:0;
 padding:0;
@@ -286,11 +307,6 @@ Forever yours ❤️
     </div>
 
     <div class="mySlides">
-        <img src="timeline2.jpg.jpeg" style="width:100%; border-radius:20px;">
-        <div class="caption">💬 Our First Long Outing</div>
-    </div>
-
-    <div class="mySlides">
         <img src="timeline3.jpg.jpeg" style="width:100%; border-radius:20px;">
         <div class="caption">🌹 Our Special Memory</div>
     </div>
@@ -315,6 +331,23 @@ Forever yours ❤️
 <br><br>
 
 <button onclick="showSlide('slide5')">⬅ Back</button>
+
+</div>
+
+<!-- SLIDE 7 (Proposal) -->
+<div class="slide" id="slide7">
+
+<h2 style="margin-bottom:20px;">One More Question 💖</h2>
+
+<div class="proposal-box">
+    <h1>Will You Be Mine Forever? 💍</h1>
+    <p>You are my today, my tomorrow, and my always ❤️</p>
+
+    <button onclick="sayYes()">Yes 💖</button>
+    <button onclick="moveNo(this)">No 😜</button>
+</div>
+
+<button onclick="showSlide('slide6')">⬅ Back</button>
 
 </div>
   
@@ -371,7 +404,21 @@ function celebrate() {
 let slideIndex = 1;
 
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+    let slides = document.getElementsByClassName("mySlides");
+
+    // If NEXT pressed on last image → go to slide7
+    if (n === 1 && slideIndex === slides.length) {
+        showSlide("slide7");
+        return;
+    }
+
+    // If PREV pressed on first image → stay at first
+    if (n === -1 && slideIndex === 1) {
+        return;
+    }
+
+    slideIndex += n;
+    showSlides(slideIndex);
 }
 
 function showSlides(n) {
@@ -379,8 +426,8 @@ function showSlides(n) {
 
     if (slides.length === 0) return;
 
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
+    if (n > slides.length) slideIndex = slides.length;
+    if (n < 1) slideIndex = 1;
 
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
@@ -389,6 +436,21 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
 }
 
+// Reset slideshow when entering Slide 6
+function showSlide(id) {
+    document.querySelectorAll(".slide").forEach(s =>
+        s.classList.remove("active")
+    );
+
+    document.getElementById(id).classList.add("active");
+
+    if (id === "slide6") {
+        slideIndex = 1;
+        showSlides(slideIndex);
+    }
+}
+
+// Start slideshow when page loads
 document.addEventListener("DOMContentLoaded", function() {
     showSlides(slideIndex);
 });
@@ -396,6 +458,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
