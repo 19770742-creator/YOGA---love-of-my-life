@@ -9,6 +9,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+/* Slide 6 Background */
+#slide6 {
+    background: linear-gradient(135deg, #ffe6f0, #ffd6e0);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Make sure slides stack properly */
+.mySlides {
+    display: none;
+}
+
+/* Image styling */
+.mySlides img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+}
+
+/* Caption styling */
+.caption {
+    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
 html,body{
 margin:0;
@@ -254,29 +280,29 @@ Forever yours ❤️
 
 <div class="slideshow-container">
 
-    <div class="mySlides fade">
+    <div class="mySlides">
         <img src="timeline1.jpg.jpeg" style="width:100%; border-radius:20px;">
-        <p>🌸 The Day We Met</p>
+        <div class="caption">🌸 The Day We Met</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides">
         <img src="timeline2.jpg.jpeg" style="width:100%; border-radius:20px;">
-        <p>💬 Our First Long Outing</p>
+        <div class="caption">💬 Our First Long Outing</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides">
         <img src="timeline3.jpg.jpeg" style="width:100%; border-radius:20px;">
-        <p>🌹 Our Special Memory</p>
+        <div class="caption">🌹 Our Special Memory</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides">
         <img src="timeline4.jpg.jpeg" style="width:100%; border-radius:20px;">
-        <p>💍 The Promise</p>
+        <div class="caption">💍 The Promise</div>
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides">
         <img src="timeline5.jpg.jpeg" style="width:100%; border-radius:20px;">
-        <p>✨ Our Forever</p>
+        <div class="caption">✨ Our Forever</div>
     </div>
 
     <br>
@@ -370,6 +396,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
