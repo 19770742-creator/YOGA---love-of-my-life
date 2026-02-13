@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+overflow:hidden;
+}
+
+/* Slide */
+#luxTimelineSlide{
+position:relative;
+width:100%;
+height:100vh;
+overflow:hidden;
+transition:all 0.6s ease;
+padding-top:20px;
+}
+
+/* Title */
+.lux-title{
+text-align:center;
+font-family:'Playfair Display',serif;
+font-size:28px;
+margin-bottom:10px;
+}
+
+/* Theme Buttons */
+.theme-buttons{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-bottom:10px;
+flex-wrap:wrap;
+}
+
+.theme-buttons button{
+padding:6px 14px;
+border-radius:20px;
+border:none;
+font-size:12px;
+cursor:pointer;
+}
+
+/* Timeline */
+.lux-timeline{
+position:relative;
+z-index:2;
+width:100%;
+max-height:65vh;
+overflow-y:auto;
+padding:10px;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* Card */
+.lux-card{
+position:relative;
+width:90%;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+.lux-card img{
+width:100%;
+display:block;
+border-radius:20px;
+}
+
+/* Caption */
+.lux-caption{
+position:absolute;
+bottom:0;
+width:100%;
+padding:15px;
+background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+color:white;
+text-align:center;
+font-size:16px;
+}
+
+/* Gold Particles */
+#goldParticles{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+}
+
+.gold-dot{
+position:absolute;
+width:6px;
+height:6px;
+background:gold;
+border-radius:50%;
+opacity:0.8;
+animation:floatGold linear infinite;
+}
+
+@keyframes floatGold{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+
+/* Instagram Heart */
+.insta-heart{
+position:absolute;
+font-size:90px;
+color:white;
+animation:heartPop 1s ease forwards;
+pointer-events:none;
+z-index:999;
+}
+
+@keyframes heartPop{
+0%{transform:scale(0.3);opacity:0;}
+50%{transform:scale(1.2);opacity:1;}
+100%{transform:scale(1);opacity:0;}
+}
+
+/* THEMES */
+
+.theme-dark{
+background:#0f0f0f;
+color:white;
+}
+
+.theme-pink{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+}
+
+.theme-sunset{
+background:linear-gradient(135deg,#ff5f6d,#ffc371);
+}
+
+.theme-white{
+background:#f7f7f7;
+color:black;
+}
+
+.theme-white .lux-caption{
+background:linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+color:black;
+}
+</style>
+</head>
+
+<body>
+
+<div id="luxTimelineSlide" class="theme-dark">
+
+<h2 class="lux-title">Our Journey 🖤</h2>
+
+<div class="theme-buttons">
+<button onclick="setTheme('dark')">Dark</button>
+<button onclick="setTheme('pink')">Pink</button>
+<button onclick="setTheme('sunset')">Sunset</button>
+<button onclick="setTheme('white')">White</button>
+</div>
+
+<div id="goldParticles"></div>
+
+<div class="lux-timeline">
+
+<div class="lux-card">
+<img src="timeline1.jpg.jpeg">
+<div class="lux-caption">First Talk 💬</div>
+</div>
+
+<div class="lux-card">
+<img src="timeline2.jpg,jpeg">
+<div class="lux-caption">First Laugh 😄</div>
+</div>
+
+<div class="lux-card">
+<img src="timeline3.jpg.jpeg">
+<div class="lux-caption">First Memory 📸</div>
+</div>
+
+<div class="lux-card">
+<img src="timeline4.jpg.jpeg">
+<div class="lux-caption">Today ❤️</div>
+</div>
+
+<div class="lux-card">
+<img src="timeline5.jpg.jpeg">
+<div class="lux-caption">Forever ♾</div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+/* GOLD PARTICLES */
+function createGoldParticles(){
+const container=document.getElementById("goldParticles");
+container.innerHTML="";
+for(let i=0;i<30;i++){
+let dot=document.createElement("div");
+dot.className="gold-dot";
+dot.style.left=Math.random()*100+"%";
+dot.style.animationDuration=(5+Math.random()*5)+"s";
+dot.style.animationDelay=Math.random()*5+"s";
+container.appendChild(dot);
+}
+}
+
+/* THEME SWITCH */
+function setTheme(type){
+let slide=document.getElementById("luxTimelineSlide");
+slide.className="theme-"+type;
+
+if(type==="dark"){
+createGoldParticles();
+}else{
+document.getElementById("goldParticles").innerHTML="";
+}
+}
+
+/* Load gold particles initially */
+createGoldParticles();
+
+/* DOUBLE TAP LIKE */
+let lastTap=0;
+
+document.querySelectorAll(".lux-card img").forEach(img=>{
+img.addEventListener("touchend",function(){
+let currentTime=new Date().getTime();
+let tapLength=currentTime-lastTap;
+
+if(tapLength<300 && tapLength>0){
+showHeart(this);
+}
+lastTap=currentTime;
+});
+});
+
+function showHeart(element){
+let heart=document.createElement("div");
+heart.className="insta-heart";
+heart.innerHTML="❤";
+
+let rect=element.getBoundingClientRect();
+heart.style.left=(rect.left + rect.width/2 - 45)+"px";
+heart.style.top=(rect.top + rect.height/2 - 45)+"px";
+
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),1000);
+}
+
+</script>
+
+</body>
+</html>
