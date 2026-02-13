@@ -226,7 +226,7 @@ When i think about the future, i see you beside me holding my hand and building 
 In every lifetime, I will always choose you.<br><br>
 Forever yours ❤️</p>
 </div>
-<button onclick="showSlide('slide2')">⬅ Back</button>
+<button onclick="openEnvelope()">Gift 2 💌</button>⬅ Back</button>
 </div>
 
 <!-- SLIDE 5 -->
@@ -295,9 +295,14 @@ function startLove() {
     showSlide("slide2");
 }
 
+<button onclick="openEnvelope()">Gift 2 💌</button>
+  
 // ---------- SLIDE SWITCHING ----------
 function showSlide(id) {
-    document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".slide").forEach(s => 
+        s.classList.remove("active")
+    );
+
     document.getElementById(id).classList.add("active");
 
     if (id === "slide6") {
@@ -305,7 +310,6 @@ function showSlide(id) {
         showSlides(slideIndex);
     }
 }
-
 // ---------- CELEBRATION EFFECT ----------
 function celebrate() {
     for (let i = 0; i < 80; i++) {
@@ -351,6 +355,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </body>
 </html>
+
 
 
 
